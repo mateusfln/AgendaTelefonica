@@ -73,10 +73,10 @@
                         </tbody>
                     </table>
                 </div>
-                <?php else: ?>
+                <?php endif; ?>
+                <?php if; ?>
                 <h5 class='text-decoration-underline fw-lighter'>Essa Pessoa não possui telefones cadastrados.</h5>
                 <?= $this->Html->link(__('Cadastrar'), ['controller' => 'Telefones', 'action' => 'add'], ['class'=>'bg-info link-dark rounded p-2 text-decoration-none']) ?>
-                <?php endif; ?>
             </div>
         </div>
     </div>

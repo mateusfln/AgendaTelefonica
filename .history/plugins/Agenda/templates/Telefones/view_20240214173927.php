@@ -16,7 +16,7 @@
                     <th><?= __('Numero') ?></th>
                     <th><?= __('Id') ?></th>
                     <th><?= __('Status') ?></th>
-                    <th><?= __('Actions') ?></th>
+                    <th><?= __('Status') ?></th>
                 </thead>
                 <tbody>
                     <td><?= $telefone->hasValue('pessoa') ? $this->Html->link($telefone->pessoa->nome_completo, ['controller' => 'Pessoas', 'action' => 'view', $telefone->pessoa->id]) : '' ?></td>
@@ -32,12 +32,15 @@
                         
                     <?php endif; ?>
                   </td>
-                  <td class='d-flex gap-2'>
-                    <?= $this->Html->link(__('Edit'), ['action' => 'edit', $telefone->id],['class'=>'bg-info link-dark rounded p-2 text-decoration-none']) ?>
-                    <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $telefone->id], ['confirm' => __('Are you sure you want to delete # {0}?', $telefone->numero), 'class'=>'bg-danger link-dark rounded p-2 text-decoration-none']) ?>
-                  </td>
                 </tbody>
             </table>
         </div>
+        <aside class="column">
+        <div class="side-nav">
+            <h4 class="heading"><?= __('Actions') ?></h4>
+            <?= $this->Html->link(__('Edit'), ['action' => 'edit', $telefone->id],['class'=>'bg-info link-dark rounded p-2 text-decoration-none']) ?>
+                        <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $telefone->id], ['confirm' => __('Are you sure you want to delete # {0}?', $telefone->numero), 'class'=>'bg-danger link-dark rounded p-2 text-decoration-none']) ?>
+        </div>
+    </aside>
     </div>
 </div>

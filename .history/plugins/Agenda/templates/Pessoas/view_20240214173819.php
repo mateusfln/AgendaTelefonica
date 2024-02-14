@@ -32,7 +32,7 @@
             </table>
             <!-- Telefones Relacionados -->
             <div class="related">
-                <h3><?= __('Telefones Relacionados') ?></h3>
+                <h4><?= __('Telefones Relacionados') ?></h4>
                 <?php if (!empty($pessoa->telefones)) : ?>
                 <div class="table-responsive">
                     <table class="table table-light mx-auto m-3">
@@ -73,9 +73,6 @@
                         </tbody>
                     </table>
                 </div>
-                <?php else: ?>
-                <h5 class='text-decoration-underline fw-lighter'>Essa Pessoa não possui telefones cadastrados.</h5>
-                <?= $this->Html->link(__('Cadastrar'), ['controller' => 'Telefones', 'action' => 'add'], ['class'=>'bg-info link-dark rounded p-2 text-decoration-none']) ?>
                 <?php endif; ?>
             </div>
         </div>

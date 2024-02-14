@@ -39,5 +39,11 @@
                 </tbody>
             </table>
         </div>
+        <aside class="column">
+        <div class="side-nav">
+            <h4 class="heading"><?= __('Actions') ?></h4>
+            
+        </div>
+    </aside>
     </div>
 </div>

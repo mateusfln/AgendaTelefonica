@@ -32,12 +32,17 @@
                         
                     <?php endif; ?>
                   </td>
-                  <td class='d-flex gap-2'>
-                    <?= $this->Html->link(__('Edit'), ['action' => 'edit', $telefone->id],['class'=>'bg-info link-dark rounded p-2 text-decoration-none']) ?>
-                    <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $telefone->id], ['confirm' => __('Are you sure you want to delete # {0}?', $telefone->numero), 'class'=>'bg-danger link-dark rounded p-2 text-decoration-none']) ?>
+                  <td>
+                        
                   </td>
                 </tbody>
             </table>
         </div>
+        <aside class="column">
+        <div class="side-nav">
+            <h4 class="heading"><?= __('Actions') ?></h4>
+            
+        </div>
+    </aside>
     </div>
 </div>

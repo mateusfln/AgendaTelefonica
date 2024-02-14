@@ -73,10 +73,9 @@
                         </tbody>
                     </table>
                 </div>
-                <?php else: ?>
-                <h5 class='text-decoration-underline fw-lighter'>Essa Pessoa não possui telefones cadastrados.</h5>
-                <?= $this->Html->link(__('Cadastrar'), ['controller' => 'Telefones', 'action' => 'add'], ['class'=>'bg-info link-dark rounded p-2 text-decoration-none']) ?>
                 <?php endif; ?>
+                <h5 class='text-decoration-underline fw-lighter'>Essa Pessoa não possui telefones cadastrados.</h5>
+                <?= $this->Html->link(__('Cadastrar'), ['controller' => 'Telefones', 'action' => 'add', $pessoa->telefones->id], ['class'=>'bg-success link-dark rounded p-2 text-decoration-none']) ?>
             </div>
         </div>
     </div>

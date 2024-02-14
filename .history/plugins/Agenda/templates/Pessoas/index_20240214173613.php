@@ -20,7 +20,7 @@
                     <td><?= $this->Number->format($pessoa->id) ?></td>
                     <td><?= h($pessoa->nome_completo) ?></td>
                     <td><?= h($pessoa->cpf) ?></td>
-                    <td class="actions d-flex">
+                    <td class="actions d-flex justify-content-evenly">
                         <?= $this->Html->link(__('View'), ['action' => 'view', $pessoa->id], ['class'=>'bg-success link-dark rounded p-2 text-decoration-none']) ?>
                     </td>
                 </tr>
@@ -41,7 +41,5 @@
           </ul>
         <p><?= $this->Paginator->counter(__('Página {{page}} de {{pages}}, Listando {{current}} itens de {{count}} no total')) ?></p>
 </div>
-
-<?= $this->Html->link(__('Cadastrar'), ['action' => 'add'], ['class'=>'bg-info link-dark rounded p-2 text-decoration-none']) ?>
 
 

@@ -18,7 +18,7 @@
             <fieldset>
                 <legend><?= __('Add Telefone') ?></legend>
                 <?php
-                    echo $this->Form->control('pessoa_id', ['options' => $telefone->pessoa->nome_completo, 'empty' => false]);
+                    echo $this->Form->control('nome_completo', ['options' => $telefone->pessoa->nome_completo, 'empty' => true]);
                     echo $this->Form->control('ddd');
                     echo $this->Form->control('ddi');
                     echo $this->Form->control('numero');
