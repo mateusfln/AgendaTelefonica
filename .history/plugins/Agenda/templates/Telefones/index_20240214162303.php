@@ -1,0 +1,52 @@
+<?php
+/**
+ * @var \App\View\AppView $this
+ * @var iterable<\App\Model\Entity\Telefone> $telefones
+ */
+?>
+<div class="telefones index content">
+    <?= $this->Html->link(__('New Telefone'), ['action' => 'add'], ['class' => 'button float-right']) ?>
+    <h3><?= __('Telefones') ?></h3>
+    <div class="table-responsive">
+        <table class='table table-light mx-auto m-3'>
+            <thead class='table-dark'>
+                <tr>
+                    <th><?= $this->Paginator->sort('id') ?></th>
+                    <th><?= $this->Paginator->sort('pessoa_id') ?></th>
+                    <th><?= $this->Paginator->sort('ddd') ?></th>
+                    <th><?= $this->Paginator->sort('ddi') ?></th>
+                    <th><?= $this->Paginator->sort('numero') ?></th>
+                    <th><?= $this->Paginator->sort('ativo') ?></th>
+                    <th class="actions"><?= __('Actions') ?></th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php foreach ($telefones as $telefone): ?>
+                <tr>
+                    <td><?= $this->Number->format($telefone->id) ?></td>
+                    <td><?= $telefone->hasValue('pessoa') ? $this->Html->link($telefone->pessoa->cpf, ['controller' => 'Pessoas', 'action' => 'view', $telefone->pessoa->id]) : '' ?></td>
+                    <td><?= h($telefone->ddd) ?></td>
+                    <td><?= h($telefone->ddi) ?></td>
+                    <td><?= h($telefone->numero) ?></td>
+                    <td><?= h($telefone->ativo) ?></td>
+                    <td class="actions">
+                        <?= $this->Html->link(__('View'), ['action' => 'view', $telefone->id]) ?>
+                        <?= $this->Html->link(__('Edit'), ['action' => 'edit', $telefone->id]) ?>
+                        <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $telefone->id], ['confirm' => __('Are you sure you want to delete # {0}?', $telefone->id)]) ?>
+                    </td>
+                </tr>
+                <?php endforeach; ?>
+            </tbody>
+        </table>
+    </div>
+    <div class="paginator">
+        <ul class="pagination">
+            <?= $this->Paginator->first('<< ' . __('first')) ?>
+            <?= $this->Paginator->prev('< ' . __('previous')) ?>
+            <?= $this->Paginator->numbers() ?>
+            <?= $this->Paginator->next(__('next') . ' >') ?>
+            <?= $this->Paginator->last(__('last') . ' >>') ?>
+        </ul>
+        <p><?= $this->Paginator->counter(__('Page {{page}} of {{pages}}, showing {{current}} record(s) out of {{count}} total')) ?></p>
+    </div>
+</div>
